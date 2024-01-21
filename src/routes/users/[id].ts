@@ -11,6 +11,8 @@ export const get: RequestHandler<Params, any> = async ({ params, locals }) => {
 
 	const user = await getUserById(id);
 	const sharedItems = await commonLikedItems(id, locals.session.userId);
+	console.log(id, locals.session.userId)
+	console.log(sharedItems, "asasas")
 	const liked = await likedItems(id);
 
 	return {
